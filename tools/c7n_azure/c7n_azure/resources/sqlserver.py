@@ -275,7 +275,7 @@ class AuditingFilter(Filter):
     .. code-block:: yaml
 
         policies:
-          - name: sql-database-no-tde
+          - name: sql-database-no-auditing
             resource: azure.sql-server
             filters:
               - type: auditing

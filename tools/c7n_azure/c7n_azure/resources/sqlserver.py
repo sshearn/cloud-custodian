@@ -7,8 +7,7 @@ from c7n_azure.actions.firewall import SetFirewallAction
 from c7n_azure.filters import FirewallRulesFilter, FirewallBypassFilter
 from c7n_azure.provider import resources
 from c7n_azure.resources.arm import ArmResourceManager
-from c7n_azure.query import ChildTypeInfo
-from c7n_azure.utils import ResourceIdParser, ThreadHelper, StringUtils
+from c7n_azure.utils import ThreadHelper, StringUtils
 from netaddr import IPRange, IPSet, IPNetwork, IPAddress
 
 from c7n.utils import type_schema

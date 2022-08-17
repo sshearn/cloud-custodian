@@ -301,6 +301,23 @@ class SqlServerTest(BaseTest):
         resources = p.run()
         self.assertEqual(1, len(resources))
 
+    @cassette_name('auditing')
+    def test_auditing_filter_enabled(self):
+        p = self.load_policy({
+            'name': 'test-azure-sql-server',
+            'resource': 'azure.sqlserver',
+            'filters': [
+                {'type': 'value',
+                 'key': 'name',
+                 'op': 'glob',
+                 'value_type': 'normalize',
+                 'value': 'cctestsqlserver*'},
+                {'type': 'auditing',
+                 'enabled': True}],
+        }, validate=True)
+        resources = p.run()
+        self.assertEqual(1, len(resources))
+
 
 class SQLServerFirewallFilterTest(BaseTest):
 

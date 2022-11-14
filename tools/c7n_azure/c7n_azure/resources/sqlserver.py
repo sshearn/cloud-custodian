@@ -12,7 +12,7 @@ from netaddr import IPRange, IPSet, IPNetwork, IPAddress
 
 from c7n.exceptions import PolicyValidationError
 from c7n.utils import type_schema
-from c7n.filters.core import ValueFilter
+from c7n.filters.core import ValueFilter, Filter
 
 AZURE_SERVICES = IPRange('0.0.0.0', '0.0.0.0')  # nosec
 log = logging.getLogger('custodian.azure.sql-server')
